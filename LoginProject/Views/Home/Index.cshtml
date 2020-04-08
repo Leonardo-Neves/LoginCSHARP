@@ -1,0 +1,28 @@
+﻿@model LoginProject.Models.Usuario
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+<br />
+
+<form asp-action="Index" asp-controller="Home" method="post">
+    <div class="form-group">
+        <b><label asp-for="Email" class="shadow-lg" for="exampleInputEmail1">Usuário</label></b>
+        <input asp-for="Email" name="Email" class="form-control shadow-lg rounded-pill" type="email">
+    </div>
+    <br />
+    <button type="submit" class="col col-md-12 shadow-lg rounded-pill btn btn-outline-warning">Entrar</button>
+</form>
+
+<br />
+
+<form asp-action="Cadastrar" asp-controller="Home" method="get">
+    <div class="form-group">
+        <button type="submit" asp-action="Cadastrar" asp-controller="Home" class="col col-md-12 shadow-lg rounded-pill btn btn-outline-warning">Cadastrar</button>
+    </div>
+</form>
+
+  

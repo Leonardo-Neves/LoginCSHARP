@@ -1,0 +1,26 @@
+﻿@model LoginProject.Models.SenhaKeyGenerator
+@{
+    ViewData["Title"] = "Senha";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //string senha = Context.Request.Query["senha"];
+}
+<h1>Senha</h1>
+
+@if (ViewData["MSG_E"] != null)
+{
+    <p class="alert alert-danger">@Html.Raw(ViewData["MSG_E"])</p>// Essa mensagem só aparece depois que os dados forem enviados
+    //Html.Raw deixar o html do jeito que tem que estar, pois antes na mensagem não estava lendo a quebra de linha
+}
+
+<br />
+<form asp-action="Senha" asp-controller="Home" method="post">
+    <div class="form-group">
+        <label asp-for="Senha">Senha</label>
+        <input asp-for="Senha" class="form-control shadow-lg rounded-pill" type="text">
+    </div>
+    <br />
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-warning btn-block shadow-lg rounded-pill"> Enviar Senha </button>
+    </div>
+</form>
